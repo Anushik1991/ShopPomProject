@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/ShopPomProject/src/test/java/automationexersice/LoginFlowTest.java"><classes><class name="automationexersice.LoginFlowTest"><methods><include name="verifyLoginPositivCase"/><include name="verifyLoginToLogout"/></methods></class></classes></test></suite>
