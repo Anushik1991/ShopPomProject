@@ -3,6 +3,8 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.helper.HelperReg.getNumberFromString;
+
 public class CartPage extends CommonElement{
 
     private final By ALL_PRODUCTS_IN_CART = By.xpath("//tbody");
