@@ -8,13 +8,13 @@ public class DataInput {
     public Object[][] loginData() {
         return new Object[][]{
                 {
-                       "Anushik", "anush@.ru","error" //data with domain wrong
+                       "Anushik", "anush@.ru" //data with domain wrong
                 },
                 {
-                       "Anushik", "anushmail.ru","error" //data with domain wrong
+                       "Anushik", "anushmail.ru" //data with domain wrong
                 },
                 {
-                        "Anushik", "anush@mail","error" //data with domain wrong
+                        "Anushik", "anush@mail" //data with domain wrong
                 },
                 {
                         "Anushik", "anush2001@gmail.com","Email Address already exist!"

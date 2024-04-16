@@ -2,9 +2,6 @@ package automationexersisice.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class SignUpPage extends CommonElement {
 
@@ -29,8 +26,9 @@ public class SignUpPage extends CommonElement {
     private final By CITY_INPUT = By.id("city");
     private final By ZIPCODE_INPUT = By.id("zipcode");
     private final By TEL_NUMBER_INPUT = By.id("mobile_number");
-    private final By CREATE_ACCOUNT_BUTTON=By.xpath("(//button[@type='submit'])[1]");
+    private final By CREATE_ACCOUNT_BUTTON = By.xpath("//button[@data-qa='create-account']");
 
+                                  //Account Create Info page
 
     public SignUpPage(WebDriver driver) {
         super(driver);
@@ -54,6 +52,10 @@ public class SignUpPage extends CommonElement {
 
     public void typePassword(String password){
         sendKeysOfData(PASSWORD_REG,password);
+    }
+
+    public void scrollAfterPassword(int count) {
+        scroll(count);
     }
     public void daySelect(String text){
         selectElementByText(DAY_SELECT,text);
@@ -84,9 +86,7 @@ public class SignUpPage extends CommonElement {
     public String getAddressInfoText(){
         return getElementText(ADDRESS_INFO_TITLE);
     }
-    public void scrollAfterAddressInfoText(WebDriver driver, int count) {
-        scroll(driver,count);
-    }
+
     public void typeFirstName(String name){
         sendKeysOfData(NAME_INPUT,name);
     }
@@ -120,7 +120,9 @@ public class SignUpPage extends CommonElement {
     public void clickOnCreateAccountButton() {
         clickOnElement(CREATE_ACCOUNT_BUTTON);
     }
-
+    public boolean createAccountButtonDisplayed(){
+        return isElementAvailable(CREATE_ACCOUNT_BUTTON);
+    }
 
 
 

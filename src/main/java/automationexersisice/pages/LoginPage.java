@@ -7,24 +7,28 @@ public class LoginPage extends CommonElement  {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-                                 //LOGIN
+                                 //LOGIN LOCATORS
     private final By LOGIN_TITLE = By.cssSelector(".login-form h2");
     private final By LOGIN = By.cssSelector("input[data-qa=login-email]");
     private final By PASSWORD = By.cssSelector("input[data-qa=login-password]");
     private final By LOGIN_BUTTON = By.cssSelector("[action='/login'] button");
+    private final By LOGINDATA_INCORRECT_MESSAGE = By.xpath("//p[contains(text(),'is incorrect!')]");
 
-                                  //SIGN UP
+
+                                   //SIGN UP LOCATORS
     private final By SIGNUP_TITLE = By.cssSelector(".signup-form h2");
     private final By NAME = By.cssSelector("input[name='name']");
     private final By EMAIL_ADDRESS = By.cssSelector(".signup-form [name='email']");
     private final By SIGNUP_BUTTON = By.xpath("//button[text()='Signup']");
+    private final By EXIST_EMAIL_EXEPTION_TEXT = By.xpath("//p[contains(text(),'already exist')]");
 
-                                  //SUBSCRIPTION
+
+                                   //SUBSCRIPTION
     private final By SUBSCRIPTION_TITLE = By.cssSelector(".single-widget h2");
     private final By SUB_EMAIL = By.id("susbscribe_email");
     private final By SUSBSCRIBE_BUTTON = By.xpath("//button[@id='subscribe']");
 
-                                    //SIGN UP methods
+                                   //SIGN UP methods
 
     public void openLoginPage(){
         openPage("https://automationexercise.com/login");
@@ -50,11 +54,14 @@ public class LoginPage extends CommonElement  {
     public boolean signUpButtonDisplayed(){
         return isElementAvailable(SIGNUP_BUTTON);
     }
+    public String getExpExistEmailText(){
+        return getElementText(EXIST_EMAIL_EXEPTION_TEXT);
+    }
+    public boolean expExistEmailDisplayed(){
+        return isElementAvailable(EXIST_EMAIL_EXEPTION_TEXT);
+    }
 
-
-
-
-                              //Login_method
+                                       //Login_method
 
     public String getLoginText(){
         return getElementText(LOGIN_TITLE);
@@ -67,6 +74,13 @@ public class LoginPage extends CommonElement  {
     }
     public void clickOnLogin() {
         clickOnElement(LOGIN_BUTTON);
+    }
+
+    public String getIncorrectLoginDataText(){
+        return getElementText(LOGINDATA_INCORRECT_MESSAGE);
+    }
+    public boolean IncorrectLoginDataDisplayed(){
+        return isElementAvailable(LOGINDATA_INCORRECT_MESSAGE);
     }
 
 
