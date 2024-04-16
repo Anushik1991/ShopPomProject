@@ -37,7 +37,7 @@ public class ProductsTest extends BaseTest {
         CartPage cartPage = new CartPage(driver);
 
         cartPage.getTitleOfCartPage();
-        softAssertion.assertEquals(cartPage.getTitleOfCartPage(),"Automation Exercise - All Products","The Products page doesnt open");
+        softAssertion.assertEquals(cartPage.getTitleOfCartPage(),"Automation Exercise - Checkout","The Cart page doesnt open");
 
         cartPage.getQuantityProductsInCart();
         softAssertion.assertEquals(cartPage.getQuantityProductsInCart(),3,"The both products are not added to Cart");
