@@ -68,27 +68,27 @@ public class ProductsPage extends CommonElement {
     public String getCategoryTitleText(){
         return getElementText(CATEGORY_SECTION_TITLE);
     }
-    public boolean getCategoryIsDisplayed(){
-        return isElementDisplayedByIndex(CATEGORY_TYPE,0);
+    public boolean getCategoryIsDisplayed(int index){
+        return isElementDisplayedByIndex(CATEGORY_TYPE,index);
     }
 
-    public String getCategoryNameText(){
-        return getElementTextByIndex(CATEGORY_TYPE,0);
+    public String getCategoryNameText(int index){
+        return getElementTextByIndex(CATEGORY_TYPE,index);
     }
 
-    public void clickOnCategoryType(){
-        clickOnByIndex(PLUS_BUTTON,0);
+    public void clickOnCategoryType(int index){
+        clickOnByIndex(PLUS_BUTTON,index);
     }
 
-    public String getProductText(){
-        return getElementTextByIndex(PRODUCT_TYPE,0);
+    public String getProductText(int index){
+        return getElementTextByIndex(PRODUCT_TYPE,index);
     }
-    public boolean getProductIsDisplayed(){
-        return isElementDisplayedByIndex(PRODUCT_TYPE,0);
+    public boolean getProductIsDisplayed(int index){
+        return isElementDisplayedByIndex(PRODUCT_TYPE,index);
     }
 
-    public void clickOnProductType(){
-        clickOnByIndex(PRODUCT_TYPE,0);
+    public void clickOnProductType(int index){
+        clickOnByIndex(PRODUCT_TYPE,index);
     }
 
 

@@ -170,21 +170,41 @@ public class ProductsTest extends BaseTest {
         softAssertion.assertTrue(productPage.getCategoryTitleIsDisplayed(), "The title'Category' doesnt display");
         softAssertion.assertEquals(productPage.getCategoryTitleText(), "CATEGORY", "The title of the Category is wrong");
 
-        softAssertion.assertTrue(productPage.getCategoryIsDisplayed(), "The category 'Women' doesnt display");
-        softAssertion.assertEquals(productPage.getCategoryNameText(), "WOMEN", "The name of the category doesnt match");
+        softAssertion.assertTrue(productPage.getCategoryIsDisplayed(0), "The category 'Women' doesnt display");
+        softAssertion.assertEquals(productPage.getCategoryNameText(0), "WOMEN", "The name of the category doesnt match");
 
-        productPage.clickOnCategoryType();
+        productPage.clickOnCategoryType(0);
 
-        softAssertion.assertTrue(productPage.getProductIsDisplayed(), "The product 'DRESS' doesnt display");
-        softAssertion.assertEquals(productPage.getProductText(), "DRESS", "The name product doesnt match");
+        softAssertion.assertTrue(productPage.getProductIsDisplayed(0), "The product 'DRESS' doesnt display");
+        softAssertion.assertEquals(productPage.getProductText(0), "DRESS", "The name product doesnt match");
 
-        productPage.clickOnProductType();
+        productPage.clickOnProductType(0);
 
         sleep(10);
         DressProductPage dressPage = new DressProductPage(driver);
-        dressPage.getTitleOfProductTypePage();
+        dressPage.getTitleOfDressPage();
 
-        softAssertion.assertEquals(dressPage.getTitleOfProductTypePage(), "Automation Exercise - Dress Products", "The product type page 'Dress Products' doesnt open");
+        softAssertion.assertEquals(dressPage.getTitleOfDressPage(), "Automation Exercise - Dress Products", "The product type page 'Dress Products' doesnt open");
+
+
+        softAssertion.assertTrue(productPage.getCategoryIsDisplayed(1), "The category 'MEN' doesnt display");
+        softAssertion.assertEquals(productPage.getCategoryNameText(1), "MEN", "The name of the category doesnt match");
+
+        productPage.clickOnCategoryType(1);
+
+        softAssertion.assertTrue(productPage.getProductIsDisplayed(1), "The product 'JEANS' doesnt display");
+        softAssertion.assertEquals(productPage.getProductText(1), "JEANS", "The name product doesnt match");
+
+        productPage.clickOnProductType(4);
+
+        sleep(10);
+        JeansProductPage jeansPage = new JeansProductPage(driver);
+        jeansPage.getTitleOfJeansPage();
+
+        softAssertion.assertEquals(jeansPage.getTitleOfJeansPage(), "Automation Exercise - Jeans Products", "The product type page 'Jeans Products' doesnt open");
+
+
+
 
 
         softAssertion.assertAll();

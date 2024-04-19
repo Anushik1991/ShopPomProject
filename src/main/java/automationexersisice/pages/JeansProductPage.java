@@ -2,13 +2,13 @@ package automationexersisice.pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class DressProductPage extends CommonElement{
+public class JeansProductPage extends CommonElement {
 
-    public DressProductPage(WebDriver driver) {
+    public JeansProductPage(WebDriver driver) {
         super(driver);
     }
 
-    public String getTitleOfDressPage(){
+    public String getTitleOfJeansPage(){
         return getPageTitle();
     }
 
