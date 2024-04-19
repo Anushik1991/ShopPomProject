@@ -10,7 +10,7 @@ public class SeleniumWebdriver {
     public static WebDriver getWebDriver(String browser) {
         WebDriver driver = null;
         if (browser.equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();//?
             driver = new ChromeDriver();
         } else if (browser.equals("edge")) {
             WebDriverManager.edgedriver().setup();

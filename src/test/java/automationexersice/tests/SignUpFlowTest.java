@@ -6,7 +6,7 @@ import automationexersisice.pages.LoginPage1;
 import automationexersisice.pages.SignUpPage;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import static automationexersice.helper.EmailHelper.getRandomEmail;
+import static automationexersice.helper.EmailRandom.getRandomEmail;
 import static java.lang.Thread.sleep;
 
 public class SignUpFlowTest extends BaseTest {
@@ -100,7 +100,7 @@ public class SignUpFlowTest extends BaseTest {
 
     }
 
-    @Test (description= "Test Case 1.2: Register User with no valid domain",dataProvider = "loginData",dataProviderClass = automationexersice.data.DataInput.class)
+    @Test (description= "Test Case 1.2: Register User with no valid domain",dataProvider = "signUpData",dataProviderClass = automationexersice.data.DataInput.class)
     public void verifySignUpWrongDomain(String name, String email, String text){
 
                                //Login page
@@ -120,7 +120,7 @@ public class SignUpFlowTest extends BaseTest {
         softAssertion.assertAll();
 
     }
-    @Test (dataProvider = "loginData",dataProviderClass = automationexersice.data.DataInput.class)
+    @Test (dataProvider = "signUpData",dataProviderClass = automationexersice.data.DataInput.class)
     public void verifySignUp1(String name, String email,String text){
         SoftAssert softAssertion =new SoftAssert();
         LoginPage1 loginPage = new LoginPage1(driver);

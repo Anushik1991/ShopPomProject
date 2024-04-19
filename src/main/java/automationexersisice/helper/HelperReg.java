@@ -1,5 +1,7 @@
 package automationexersisice.helper;
 
+import org.openqa.selenium.By;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,6 +18,12 @@ public class HelperReg {
         }
         return number;
     }
+
+
+
+
+
+
 
 
 }

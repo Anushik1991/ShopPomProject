@@ -56,6 +56,10 @@ public class BasePage { //common functionality for all pages
         element.click();
     }
 
+    protected void clickOnByIndex(By locator,int index) {
+        getElementFromList(locator, index).click();
+    }
+
     protected void clickOnClickable(WebElement element, int duration){
           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
           wait.until(ExpectedConditions.elementToBeClickable(element)).click();

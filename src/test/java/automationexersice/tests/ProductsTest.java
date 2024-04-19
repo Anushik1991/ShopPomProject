@@ -55,6 +55,7 @@ public class ProductsTest extends BaseTest {
         softAssertion.assertEquals(cartPage.getCountAddedProductTextByIndex(0),"1","The quantity of the product doesnt match");
         softAssertion.assertEquals(cartPage.getTotalPriceProductTextByIndex(0),"Rs. 500","The total price of the product doesnt match");
 
+
         softAssertion.assertEquals(cartPage.getNameProductTextByIndex(1),"Men Tshirt","The name of the product doesnt match");
         softAssertion.assertEquals(cartPage.getDescriptionProductTextByIndex(1),"Men > Tshirts","The description of the product doesnt match");
         softAssertion.assertEquals(cartPage.getPriceProductTextByIndex(1),"Rs. 400","The price of the product doesnt match");
@@ -153,7 +154,47 @@ public class ProductsTest extends BaseTest {
 
     }
 
+    @Test(description = "Test Case 18: View Category Products",groups = "loggedInState")
+    public void verifyCategoryProducts() {
+        //Home Page
+        SoftAssert softAssertion = new SoftAssert();
 
+        CommonElement commonPage = new CommonElement(driver);
+        commonPage.clickOnProductMenu();
+
+        sleep(10);
+        ProductsPage productPage = new ProductsPage(driver);
+        productPage.getTitleOfProuctsPage();
+        softAssertion.assertEquals(productPage.getTitleOfProuctsPage(), "Automation Exercise - All Products", "The Products page doesnt open");
+
+        softAssertion.assertTrue(productPage.getCategoryTitleIsDisplayed(), "The title'Category' doesnt display");
+        softAssertion.assertEquals(productPage.getCategoryTitleText(), "CATEGORY", "The title of the Category is wrong");
+
+        softAssertion.assertTrue(productPage.getCategoryIsDisplayed(), "The category 'Women' doesnt display");
+        softAssertion.assertEquals(productPage.getCategoryNameText(), "WOMEN", "The name of the category doesnt match");
+
+        productPage.clickOnCategoryType();
+
+        softAssertion.assertTrue(productPage.getProductIsDisplayed(), "The product 'DRESS' doesnt display");
+        softAssertion.assertEquals(productPage.getProductText(), "DRESS", "The name product doesnt match");
+
+        productPage.clickOnProductType();
+
+        sleep(10);
+        DressProductPage dressPage = new DressProductPage(driver);
+        dressPage.getTitleOfProductTypePage();
+
+        softAssertion.assertEquals(dressPage.getTitleOfProductTypePage(), "Automation Exercise - Dress Products", "The product type page 'Dress Products' doesnt open");
+
+
+        softAssertion.assertAll();
+
+
+
+
+
+
+    }
 
 
 

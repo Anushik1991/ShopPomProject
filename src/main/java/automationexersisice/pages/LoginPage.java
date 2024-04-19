@@ -3,6 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static automationexersisice.constants.Constants.LOGIN_URL;
+
 public class LoginPage extends CommonElement  {
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -31,7 +33,8 @@ public class LoginPage extends CommonElement  {
                                    //SIGN UP methods
 
     public void openLoginPage(){
-        openPage("https://automationexercise.com/login");
+        //openPage("https://automationexercise.com/login");
+          openPage(LOGIN_URL); //use the constant from config file
     }
     public String getLoginPageTitle(){
         return getPageTitle();

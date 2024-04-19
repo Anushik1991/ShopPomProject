@@ -15,7 +15,16 @@ public class ProductsPage extends CommonElement {
     private final By MODAL_VIEW_CART = By.xpath("//a[@href='/view_cart']/u");
     private final By CONTINUE_BUTTON_MODAL_DISMISS = By.cssSelector("button[data-dismiss=modal]");
 
-                                           //Product 1
+                                           //CATEGORY
+    private final By CATEGORY_SECTION_TITLE = By.xpath("//div[@class='left-sidebar']/h2");
+    private final By CATEGORY_TYPE = By.xpath("//*[@class='panel panel-default']");
+    private final By PLUS_BUTTON = By.xpath("//*[@class='badge pull-right']/i");
+    private final By PRODUCT_TYPE= By.xpath("//div[@class='panel-body']/ul/li/a");
+
+
+
+
+                                            //Product 1
     private final By PRODUCT_NUMBER1 = By.xpath("//*[@class='features_items']/div[@class='col-sm-4'][1]");
     private final By PRODUCT_NAME = By.xpath("//*[@class='overlay-content']/p[contains(text(),'Blue Top')]");
     private final By ADD_TO_CART = By.xpath("//*[@class='overlay-content']/a[@data-product-id='1']");
@@ -52,11 +61,35 @@ public class ProductsPage extends CommonElement {
         waitForElementBecomeClickable(MODAL_VIEW_CART,10);
         clickOnElement(MODAL_VIEW_CART);
     }
+    public boolean getCategoryTitleIsDisplayed(){
+        return isElementDisplayed(CATEGORY_SECTION_TITLE,5);
+    }
 
+    public String getCategoryTitleText(){
+        return getElementText(CATEGORY_SECTION_TITLE);
+    }
+    public boolean getCategoryIsDisplayed(){
+        return isElementDisplayedByIndex(CATEGORY_TYPE,0);
+    }
 
+    public String getCategoryNameText(){
+        return getElementTextByIndex(CATEGORY_TYPE,0);
+    }
 
+    public void clickOnCategoryType(){
+        clickOnByIndex(PLUS_BUTTON,0);
+    }
 
+    public String getProductText(){
+        return getElementTextByIndex(PRODUCT_TYPE,0);
+    }
+    public boolean getProductIsDisplayed(){
+        return isElementDisplayedByIndex(PRODUCT_TYPE,0);
+    }
 
+    public void clickOnProductType(){
+        clickOnByIndex(PRODUCT_TYPE,0);
+    }
 
 
 }

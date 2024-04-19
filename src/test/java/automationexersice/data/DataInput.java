@@ -1,11 +1,16 @@
 package automationexersice.data;
-
+import automationexersice.helper.DataReader;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+
+import java.io.FileNotFoundException;
+
+import static automationexersice.helper.DataReader.readFromCSV;
+import static automationexersice.helper.DataReader.readFromJSON;
+
 
 public class DataInput {
-    @DataProvider(name = "loginData")
-    public Object[][] loginData() {
+    @DataProvider(name = "signUpData")
+    public Object[][] signUpData() {
         return new Object[][]{
                 {
                        "Anushik", "anush@.ru" //data with domain wrong
@@ -22,7 +27,16 @@ public class DataInput {
         };
     }
 
+    @DataProvider(name = "loginDataCSV")
+    public Object[][] loginDataCSV(){
 
+        return readFromCSV("C:\\Users\\User\\IdeaProjects\\ShopPomProject\\src\\test\\resources\\email.csv");
 
+    }
+    @DataProvider(name = "loginDataJSON")
+    public Object[][] loginDataJSON() throws FileNotFoundException {
+        return DataReader.readFromJSON("C:\\Users\\User\\IdeaProjects\\ShopPomProject\\src\\test\\resources\\userData.json");
+
+    }
 
 }
