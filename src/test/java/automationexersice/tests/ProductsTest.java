@@ -11,12 +11,11 @@ public class ProductsTest extends BaseTest {
     public void verifyAddProductsInCart() {
                                  //Home Page
         SoftAssert softAssertion = new SoftAssert();
-
-        CommonElement commonPage = new CommonElement(driver);
-        commonPage.clickOnProductMenu();
+        HomePage homePage = new HomePage();
+        homePage.clickOnProductMenu();
 
         sleep(10);
-        ProductsPage productPage = new ProductsPage(driver);
+        ProductsPage productPage = new ProductsPage();
         productPage.getTitleOfProuctsPage();
         softAssertion.assertEquals(productPage.getTitleOfProuctsPage(),"Automation Exercise - All Products","The Products page doesnt open");
 
@@ -32,9 +31,9 @@ public class ProductsTest extends BaseTest {
         productPage.clickViewCart();//transfer to chart trow View Cart text button on the modal
 
         sleep(10);
-        //commonPage.clickOnCartMenu(); //transfer
+        //productPage.clickOnCartMenu(); //transfer
 
-        CartPage cartPage = new CartPage(driver);
+        CartPage cartPage = new CartPage();
 
         cartPage.getTitleOfCartPage();
         softAssertion.assertEquals(cartPage.getTitleOfCartPage(),"Automation Exercise - Checkout","The Cart page doesnt open");
@@ -68,14 +67,13 @@ public class ProductsTest extends BaseTest {
 
     @Test(description = "Test Case 17: Remove Products From Cart",groups = "loggedInState")
     public void verifyDeletingProductFromCart() {
-        //Home Page
+                              //Home Page
         SoftAssert softAssertion = new SoftAssert();
-
-        CommonElement commonPage = new CommonElement(driver);
-        commonPage.clickOnProductMenu();
+        HomePage homePage = new HomePage();
+        homePage.clickOnProductMenu();
 
         sleep(10);
-        ProductsPage productPage = new ProductsPage(driver);
+        ProductsPage productPage = new ProductsPage();
         productPage.scrollToProduct(500);
 
         for (int i=0; i<=1;i++) {
@@ -85,9 +83,9 @@ public class ProductsTest extends BaseTest {
         }
 
         sleep(10);
-        commonPage.clickOnCartMenu();
+        productPage.clickOnCartMenu();
 
-        CartPage cartPage = new CartPage(driver);
+        CartPage cartPage = new CartPage();
 
         cartPage.getQuantityProductsInCart();
         softAssertion.assertEquals(cartPage.getQuantityProductsInCart(),2,"The both products are not added to Cart");
@@ -110,12 +108,11 @@ public class ProductsTest extends BaseTest {
     public void verifyDeletingAllProductFromCart() {
         //Home Page
         SoftAssert softAssertion = new SoftAssert();
-
-        CommonElement commonPage = new CommonElement(driver);
-        commonPage.clickOnProductMenu();
+        HomePage homePage = new HomePage();
+        homePage.clickOnProductMenu();
 
         sleep(10);
-        ProductsPage productPage = new ProductsPage(driver);
+        ProductsPage productPage = new ProductsPage();
         productPage.scrollToProduct(500);
 
         for (int i=0; i<=1;i++) {
@@ -125,9 +122,9 @@ public class ProductsTest extends BaseTest {
         }
 
         sleep(10);
-        commonPage.clickOnCartMenu();
+        productPage.clickOnCartMenu();
 
-        CartPage cartPage = new CartPage(driver);
+        CartPage cartPage = new CartPage();
 
         cartPage.getQuantityProductsInCart();
         softAssertion.assertEquals(cartPage.getQuantityProductsInCart(),2,"The both products are not added to Cart");
@@ -158,12 +155,11 @@ public class ProductsTest extends BaseTest {
     public void verifyCategoryProducts() {
         //Home Page
         SoftAssert softAssertion = new SoftAssert();
-
-        CommonElement commonPage = new CommonElement(driver);
-        commonPage.clickOnProductMenu();
+        HomePage homePage = new HomePage();
+        homePage.clickOnProductMenu();
 
         sleep(10);
-        ProductsPage productPage = new ProductsPage(driver);
+        ProductsPage productPage = new ProductsPage();
         productPage.getTitleOfProuctsPage();
         softAssertion.assertEquals(productPage.getTitleOfProuctsPage(), "Automation Exercise - All Products", "The Products page doesnt open");
 
@@ -181,7 +177,7 @@ public class ProductsTest extends BaseTest {
         productPage.clickOnProductType(0);
 
         sleep(10);
-        DressProductPage dressPage = new DressProductPage(driver);
+        DressProductPage dressPage = new DressProductPage();
         dressPage.getTitleOfDressPage();
 
         softAssertion.assertEquals(dressPage.getTitleOfDressPage(), "Automation Exercise - Dress Products", "The product type page 'Dress Products' doesnt open");
@@ -198,7 +194,7 @@ public class ProductsTest extends BaseTest {
         productPage.clickOnProductType(4);
 
         sleep(10);
-        JeansProductPage jeansPage = new JeansProductPage(driver);
+        JeansProductPage jeansPage = new JeansProductPage();
         jeansPage.getTitleOfJeansPage();
 
         softAssertion.assertEquals(jeansPage.getTitleOfJeansPage(), "Automation Exercise - Jeans Products", "The product type page 'Jeans Products' doesnt open");

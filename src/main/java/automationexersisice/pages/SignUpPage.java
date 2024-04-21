@@ -3,6 +3,8 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
+
 public class SignUpPage extends CommonElement {
 
     private final By ACCOUNT_INFO_TITLE = By.xpath("(//h2[@class='title text-center']/b)[1]");
@@ -28,11 +30,12 @@ public class SignUpPage extends CommonElement {
     private final By TEL_NUMBER_INPUT = By.id("mobile_number");
     private final By CREATE_ACCOUNT_BUTTON = By.xpath("//button[@data-qa='create-account']");
 
-                                  //Account Create Info page
-
-    public SignUpPage(WebDriver driver) {
-        super(driver);
+    public SignUpPage() {
+        super(getWebDriver());
     }
+
+
+    //Account Create Info page
 
     public String getSignUpPageTitle(){
          return getPageTitle();

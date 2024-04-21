@@ -2,10 +2,9 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
+
 public class LoginPage1 extends CommonElement  {
-    public LoginPage1(WebDriver driver) {
-        super(driver);
-    }
                                  //LOGIN
     private final By LOGIN_TITLE = By.cssSelector(".login-form h2");
     private final By LOGIN = By.cssSelector("input[data-qa=login-email]");
@@ -23,7 +22,12 @@ public class LoginPage1 extends CommonElement  {
     private final By SUB_EMAIL = By.id("susbscribe_email");
     private final By SUSBSCRIBE_BUTTON = By.xpath("//button[@id='subscribe']");
 
-                                    //SIGN UP methods
+    public LoginPage1() {
+        super(getWebDriver());
+    }
+
+
+    //SIGN UP methods
 
     public LoginPage1 openLoginPage(){
         openPage("https://automationexercise.com/login");

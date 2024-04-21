@@ -3,6 +3,8 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
+
 public class CartPage extends CommonElement{
 
     private final By ALL_PRODUCTS_IN_CART = By.xpath("//tbody");
@@ -17,9 +19,8 @@ public class CartPage extends CommonElement{
     private final By EMPTY_CART = By.xpath("//*[@id='empty_cart']/p");
     private final By TRANSFER_TO_PRODUCTS_FROM_EMPTY_CART = By.xpath("//*[@id='empty_cart']/p/a");
 
-
-    public CartPage(WebDriver driver) {
-        super(driver);
+    public CartPage() {
+        super(getWebDriver());
     }
 
     public String getTitleOfCartPage(){
@@ -71,7 +72,7 @@ public class CartPage extends CommonElement{
 
     public void deleteProductFromCard(int index){
         hoverOnElement(getElementFromList(DELETE_PRODUCT_FROM_CART,index));
-        clickOnWebElement(getElementFromList(DELETE_PRODUCT_FROM_CART,index));
+        clickOnElement(getElementFromList(DELETE_PRODUCT_FROM_CART,index));
     }
 
     public void deleteAllProductsFromCart() {

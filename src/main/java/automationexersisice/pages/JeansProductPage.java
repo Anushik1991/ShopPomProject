@@ -2,10 +2,12 @@ package automationexersisice.pages;
 
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
+
 public class JeansProductPage extends CommonElement {
 
-    public JeansProductPage(WebDriver driver) {
-        super(driver);
+    public JeansProductPage() {
+        super(getWebDriver());
     }
 
     public String getTitleOfJeansPage(){

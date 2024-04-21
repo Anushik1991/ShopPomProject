@@ -3,6 +3,8 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
+
 public class ProductsPage extends CommonElement {
 
                                       //Common Locator Products
@@ -30,10 +32,10 @@ public class ProductsPage extends CommonElement {
     private final By ADD_TO_CART = By.xpath("//*[@class='overlay-content']/a[@data-product-id='1']");
     private final By PRODUCT_DETAILS = By.cssSelector("a[href='/product_details/1']");
 
-
-    public ProductsPage(WebDriver driver) {
-        super(driver);
+    public ProductsPage() {
+        super(getWebDriver());
     }
+
 
     public String getTitleOfProuctsPage(){
         return getPageTitle();

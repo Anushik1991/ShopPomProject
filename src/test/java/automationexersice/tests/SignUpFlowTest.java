@@ -15,7 +15,7 @@ public class SignUpFlowTest extends BaseTest {
     public void verifySignUpPositivCase() throws InterruptedException {
                                   //Login page
         SoftAssert softAssertion = new SoftAssert();
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage();
 
         softAssertion.assertEquals(loginPage.getLoginPageTitle(),"Automation Exercise - Signup / Login","Login/Signup page title verification failed");
@@ -28,7 +28,7 @@ public class SignUpFlowTest extends BaseTest {
         softAssertion.assertFalse(loginPage.signUpButtonDisplayed(),"The signUp button is displayed. The test is failed");
 
                                    //Sign Up Page
-        SignUpPage signupPage = new SignUpPage(driver);
+        SignUpPage signupPage = new SignUpPage();
 
         softAssertion.assertEquals(signupPage.getSignUpPageTitle(),"Automation Exercise - Signup","Account info page title verification failed");
         softAssertion.assertEquals(signupPage.getAccountInfoText(),"ENTER ACCOUNT INFORMATION","Account info title verification failed");
@@ -66,7 +66,7 @@ public class SignUpFlowTest extends BaseTest {
         sleep(5000);
 
         softAssertion.assertFalse(signupPage.createAccountButtonDisplayed(),"The Create account button is displayed. The test is failed");
-        AccountCreatedPage accountCreatedPage = new AccountCreatedPage(driver);
+        AccountCreatedPage accountCreatedPage = new AccountCreatedPage();
         softAssertion.assertEquals(accountCreatedPage.getAccountCreatedText(),"ACCOUNT CREATED!","Account Created title verification failed");
 
         accountCreatedPage.clickOnContinue();
@@ -83,7 +83,7 @@ public class SignUpFlowTest extends BaseTest {
     public void verifySignUpExistEmail(){
 
         SoftAssert softAssertion = new SoftAssert();
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage();
 
         softAssertion.assertEquals(loginPage.getLoginPageTitle(),"Automation Exercise - Signup / Login","Login/Signup page title verification failed");
@@ -105,7 +105,7 @@ public class SignUpFlowTest extends BaseTest {
 
                                //Login page
         SoftAssert softAssertion = new SoftAssert();
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage();
 
         softAssertion.assertEquals(loginPage.getLoginPageTitle(),"Automation Exercise - Signup / Login","Login/Signup page title verification failed");
@@ -123,7 +123,7 @@ public class SignUpFlowTest extends BaseTest {
     @Test (dataProvider = "signUpData",dataProviderClass = automationexersice.data.DataInput.class)
     public void verifySignUp1(String name, String email,String text){
         SoftAssert softAssertion =new SoftAssert();
-        LoginPage1 loginPage = new LoginPage1(driver);
+        LoginPage1 loginPage = new LoginPage1();
         loginPage.openLoginPage().typeUsername(name).typeEmail(email).clickOnSignUp();
         //softAssertion.assertEquals("error","The actual result doesnt match expected result");
 

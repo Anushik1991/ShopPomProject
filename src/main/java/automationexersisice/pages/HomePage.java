@@ -1,12 +1,14 @@
 package automationexersisice.pages;
 
+
 import org.openqa.selenium.WebDriver;
 
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
 
 public class HomePage extends CommonElement {
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage() {
+        super(getWebDriver());
     }
 
     public void openHomePage(){

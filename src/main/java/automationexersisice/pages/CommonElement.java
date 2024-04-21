@@ -3,7 +3,9 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CommonElement extends BasePage {
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
+
+public abstract class CommonElement extends BasePage {
 
     private final By TEST_CASES_MENU = By.cssSelector("[href='/test_cases']");
     private final By SIGNUP_LOGIN_MENU = By.cssSelector("[href='/contact_us']");
@@ -16,8 +18,8 @@ public class CommonElement extends BasePage {
     private final By LOGOUT_MENU = By.cssSelector("[href='/logout']");
     private final By DELETE_MENU = By.cssSelector("[href='/delete_account']");
 
-    public CommonElement(WebDriver driver) {
-        super(driver);
+    public CommonElement() {
+        super(getWebDriver());
     }
 
     public void clickOnLogoutMenu() {

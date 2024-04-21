@@ -2,18 +2,19 @@ package automationexersisice.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import static automationexersisice.constants.Constants.LOGIN_URL;
+import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
 
 public class LoginPage extends CommonElement  {
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
                                  //LOGIN LOCATORS
     private final By LOGIN_TITLE = By.cssSelector(".login-form h2");
     private final By LOGIN = By.cssSelector("input[data-qa=login-email]");
     private final By PASSWORD = By.cssSelector("input[data-qa=login-password]");
     private final By LOGIN_BUTTON = By.cssSelector("[action='/login'] button");
+    @FindBy(css="[action='/login'] button") //Page Factory ememple
+    WebElement loginButton; //locator saves in element loginButton
     private final By LOGINDATA_INCORRECT_MESSAGE = By.xpath("//p[contains(text(),'is incorrect!')]");
 
 
@@ -30,7 +31,11 @@ public class LoginPage extends CommonElement  {
     private final By SUB_EMAIL = By.id("susbscribe_email");
     private final By SUSBSCRIBE_BUTTON = By.xpath("//button[@id='subscribe']");
 
-                                   //SIGN UP methods
+    public LoginPage() {
+        super(getWebDriver());
+    }
+
+    //SIGN UP methods
 
     public void openLoginPage(){
         //openPage("https://automationexercise.com/login");
@@ -76,7 +81,7 @@ public class LoginPage extends CommonElement  {
         sendKeysOfData(PASSWORD,password);
     }
     public void clickOnLogin() {
-        clickOnElement(LOGIN_BUTTON);
+        clickOnElement(loginButton); //used Page Factory
     }
 
     public String getIncorrectLoginDataText(){
