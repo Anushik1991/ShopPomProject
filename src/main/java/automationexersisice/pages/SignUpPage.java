@@ -31,7 +31,7 @@ public class SignUpPage extends CommonElement {
     private final By CREATE_ACCOUNT_BUTTON = By.xpath("//button[@data-qa='create-account']");
 
     public SignUpPage() {
-        super(getWebDriver());
+        super();
     }
 
 

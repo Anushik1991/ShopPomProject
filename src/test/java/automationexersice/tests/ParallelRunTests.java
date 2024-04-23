@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 import static automationexersice.object.UsersMockData.getCorrectUserData;
 import static automationexersice.object.UsersMockData.getIncorrectCorrectUserData;
 
-public class ParallelRunTests {
+public class ParallelRunTests extends BaseTest {
     @Test(description = "Test Case 2: Login User with correct email and password")
     public void verifyLogin(){
 

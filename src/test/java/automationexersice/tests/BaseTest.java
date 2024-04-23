@@ -18,7 +18,7 @@ public class BaseTest {
     // то осуществится run со значением @Optional("chrome")
     @Parameters({"browser"})
     @BeforeMethod
-    public void openBrowser(@Optional("chrome")  String browser){
+    public void openBrowser(@Optional("chrome") String browser){
         SeleniumWebdriver.setWebDriver(browser);
     }
     /*

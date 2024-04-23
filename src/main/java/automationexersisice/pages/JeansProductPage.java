@@ -7,7 +7,7 @@ import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
 public class JeansProductPage extends CommonElement {
 
     public JeansProductPage() {
-        super(getWebDriver());
+        super();
     }
 
     public String getTitleOfJeansPage(){

@@ -8,7 +8,7 @@ import static automationexersisice.setup.SeleniumWebdriver.getWebDriver;
 public class HomePage extends CommonElement {
 
     public HomePage() {
-        super(getWebDriver());
+        super();
     }
 
     public void openHomePage(){

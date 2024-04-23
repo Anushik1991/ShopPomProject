@@ -33,7 +33,7 @@ public class ProductsPage extends CommonElement {
     private final By PRODUCT_DETAILS = By.cssSelector("a[href='/product_details/1']");
 
     public ProductsPage() {
-        super(getWebDriver());
+        super();
     }
 
 

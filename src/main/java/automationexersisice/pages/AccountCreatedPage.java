@@ -11,7 +11,6 @@ public class AccountCreatedPage extends CommonElement  {
     private final By CONTINUE_BUTTON = By.xpath("//a[@data-qa='continue-button']");
 
     public AccountCreatedPage() {
-        super(getWebDriver());
     }
 
 

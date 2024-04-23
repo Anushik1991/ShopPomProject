@@ -20,7 +20,7 @@ public class CartPage extends CommonElement{
     private final By TRANSFER_TO_PRODUCTS_FROM_EMPTY_CART = By.xpath("//*[@id='empty_cart']/p/a");
 
     public CartPage() {
-        super(getWebDriver());
+        super();
     }
 
     public String getTitleOfCartPage(){

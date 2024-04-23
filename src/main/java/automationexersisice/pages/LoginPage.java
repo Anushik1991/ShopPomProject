@@ -32,7 +32,7 @@ public class LoginPage extends CommonElement  {
     private final By SUSBSCRIBE_BUTTON = By.xpath("//button[@id='subscribe']");
 
     public LoginPage() {
-        super(getWebDriver());
+        super();
     }
 
     //SIGN UP methods
